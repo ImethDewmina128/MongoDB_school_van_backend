@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,14 @@
   "dependencies": {
     "express": "^5.1.0",
     "mongoose": "^8.19.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImethDewmina128/MongoDB_school_van_backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ImethDewmina128/MongoDB_school_van_backend/issues"
+  },
+  "homepage": "https://github.com/ImethDewmina128/MongoDB_school_van_backend#readme"
 }

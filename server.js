@@ -48,9 +48,9 @@ const ratingSchema = new mongoose.Schema({
   }
 });
 
-const DriverRating = mongoose.model('DriverRating', ratingSchema);
+const DriverRating = mongoose.model('DriverDetails', ratingSchema);
 
-app.post('/api/driver/rate', async (req, res) => {
+app.post('/api/driver/details', async (req, res) => {
   console.log('Received a new rating request...');
 
   try {
