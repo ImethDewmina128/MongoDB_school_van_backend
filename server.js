@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const PORT = 1000; 
+const PORT = 3000; 
 
 app.use(express.json());
 
@@ -19,6 +19,14 @@ const ratingSchema = new mongoose.Schema({
     type: Number,  
     required: true 
   },
+  driver_name:{
+    type:String,
+    required:true
+  },
+  driver_age:{
+    type:Number,
+    required:true
+  },
   parent_id: { 
     type: Number,  
     required: true 
@@ -27,7 +35,7 @@ const ratingSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 1, 
-    max: 10 
+    max: 11 
   },
   comment: {
     type: String,
@@ -46,10 +54,12 @@ app.post('/api/driver/rate', async (req, res) => {
   console.log('Received a new rating request...');
 
   try {
-    const { driver_id, parent_id, rating_score, comment } = req.body;
+    const { driver_id,driver_name,driver_age, parent_id, rating_score, comment } = req.body;
 
     const newRating = new DriverRating({
       driver_id: driver_id,
+      driver_name:driver_name,
+      driver_age:driver_age,
       parent_id: parent_id,
       rating_score: rating_score,
       comment: comment
